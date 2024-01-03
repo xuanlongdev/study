@@ -1,0 +1,26 @@
+<!-- 
+    ngFor là một directive (chỉ thị) mạnh mẽ được sử dụng để lặp qua các phần tử trong một mảng hoặc một danh 
+    sách và tạo các phần tử HTML tương ứng cho mỗi phần tử trong mảng đó.
+
+    Các biến implicit (item Implicit Context Variable)
+    index: số thứ tự của item hiện tại
+    count: độ dài của array
+    first: true nếu như item đó là item đầu tiên
+    last: true nếu như item đó là item cuối cùng
+    even: true nếu như item đó là item vị trí chẵn
+    odd: true nếu như item đó là item vị trí lẻ
+ -->
+<ul>
+    <ng-container *ngIf="users.length > 0;else noUser">
+        <li *ngFor="let u of users; index as i; first as isFirst; last as isLast; odd as isOdd">
+            {{ isOdd ? 'Even: ' : 'Odd: ' }}
+            {{ u.id }} - {{ u.name }} - {{ u.phone }}
+            {{ isFirst ? "First" : "" }}
+            {{ isLast ? "Last" : "" }}
+        </li>
+    </ng-container>
+
+    <ng-template #noUser>
+        Không có tài khoản
+    </ng-template>
+</ul>

@@ -1,2 +1,5 @@
 @ là TypeScript Decorator
-Component 
+
+DataBinding
+*ngIf
+*ngFor 

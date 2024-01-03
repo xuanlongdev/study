@@ -1,0 +1,28 @@
+<!-- 
+    Class binding có thể sử dụng bằng nhiều cách
+    [class.ten-class]
+    [class]="array"
+    [class]="object"
+    [class]="variable"
+
+    Style binding
+    [style.fontSize.unit]="20" unit là những style có đơn vị
+    [style]="object"
+    [style]="variable"
+ -->
+
+
+
+
+<div style="display: flex;flex-wrap: wrap;">
+    <div class="box" [class]="['red-border', 'yellow-bg']"></div>
+    <div class="box" [class.red-border]="isDanger" [class.yellow-bg]="isWarning"></div>
+    <div [class]="classes"></div>
+    <div class="box" [class]="{'red-border': isDanger, 'yellow-bg': isWarning}"></div>
+</div>
+
+<p [style]="{'color': 'var(--text-color)'}" [style.--text-color]="isDanger ? 'red' : 'pink'">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi voluptatibus cumque voluptates? Voluptatibus possimus quibusdam odit itaque quod asperiores nobis, illo nam, enim at, cumque quisquam accusamus! Natus, facilis sunt?
+</p>
+
+<button (click)="isDanger = !isDanger; isWarning = !isWarning">Toogle</button>

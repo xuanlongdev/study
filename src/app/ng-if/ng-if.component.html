@@ -1,0 +1,20 @@
+<!-- 
+    *ngIf là một cú pháp sử dụng trong template để điều khiển việc hiển thị hoặc ẩn một phần của giao diện người
+    dùng dựa trên một điều kiện logic.
+
+    ng-template tạo thêm template cho else
+ -->
+<div *ngIf="user.age >= 18;else under18">
+    Content show!
+</div>
+
+<ng-template #under18>
+    <div>
+        Content denied!
+    </div>
+</ng-template>
+
+<br>
+<button type="button" (click)="user.age = user.age - 1">-</button>
+age: {{ user.age }}
+<button type="button" (click)="user.age = user.age + 1">+</button>
