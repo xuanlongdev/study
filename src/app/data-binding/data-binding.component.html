@@ -1,0 +1,21 @@
+<!-- 
+    *One-way Data Binding
+    {{ expression }} Interpolation dùng để hiển thị dữ liệu từ app component ra template
+    [property] Property Binding nó được sử dụng để ràng buộc giá trị của một thuộc tính của một phần tử DOM đến một biểu thức trong component.
+    (event) Event binding dùng để nhận sự kiện từ template để xử lý ở component
+
+    *Two-way Data Binding
+    [(ngModel)] Dữ liệu được đồng bộ cả hai chiều, tức là thay đổi trong model sẽ tự động được cập nhật trong 
+    view và ngược lại. Nhưng cần phải import FormsModule từ @angular/forms để sử dụng nó.
+-->
+
+<p>{{ user.name }} {{ user.age }}</p>
+
+<input type='text' [value]="user.name">
+<button type="button" (click)="handler()">Click me</button>
+
+<br>
+<br>
+
+<p>{{ name }}</p>
+<input type="text" [(ngModel)]="name"/>
